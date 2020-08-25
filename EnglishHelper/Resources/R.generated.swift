@@ -89,12 +89,37 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
+    /// Storyboard `AddWord`.
+    static let addWord = _R.storyboard.addWord()
+    /// Storyboard `Detail`.
+    static let detail = _R.storyboard.detail()
+    /// Storyboard `Home`.
+    static let home = _R.storyboard.home()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "AddWord", bundle: ...)`
+    static func addWord(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.addWord)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Detail", bundle: ...)`
+    static func detail(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.detail)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Home", bundle: ...)`
+    static func home(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.home)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -103,16 +128,76 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    fileprivate init() {}
+  }
+  #endif
+
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
+  struct color {
+    /// Color `green`.
+    static let green = Rswift.ColorResource(bundle: R.hostingBundle, name: "green")
+    /// Color `purple1`.
+    static let purple1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "purple1")
+    /// Color `purple2`.
+    static let purple2 = Rswift.ColorResource(bundle: R.hostingBundle, name: "purple2")
+
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    /// `UIColor(named: "green", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func green(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.green, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "purple1", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func purple1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.purple1, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "purple2", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func purple2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.purple2, compatibleWith: traitCollection)
     }
     #endif
 
     fileprivate init() {}
   }
-  #endif
+
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `DashboardItemCollectionViewCell`.
+    static let dashboardItemCollectionViewCell = _R.nib._DashboardItemCollectionViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DashboardItemCollectionViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.dashboardItemCollectionViewCell) instead")
+    static func dashboardItemCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.dashboardItemCollectionViewCell)
+    }
+    #endif
+
+    static func dashboardItemCollectionViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DashboardItemCollectionViewCell? {
+      return R.nib.dashboardItemCollectionViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DashboardItemCollectionViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `DashboardItemCollectionViewCell`.
+    static let dashboardItemCollectionViewCell: Rswift.ReuseIdentifier<DashboardItemCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "DashboardItemCollectionViewCell")
+
+    fileprivate init() {}
+  }
 
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
@@ -135,22 +220,46 @@ struct _R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _DashboardItemCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = DashboardItemCollectionViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "DashboardItemCollectionViewCell"
+      let name = "DashboardItemCollectionViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> DashboardItemCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DashboardItemCollectionViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
-      try launchScreen.validate()
+      try addWord.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try main.validate()
+      try detail.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try home.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try launchScreen.validate()
       #endif
     }
 
     #if os(iOS) || os(tvOS)
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UIViewController
-
+    struct addWord: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let name = "LaunchScreen"
+      let name = "AddWord"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -162,11 +271,41 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+    struct detail: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Detail"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct home: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = HomeViewController
 
       let bundle = R.hostingBundle
-      let name = "Main"
+      let name = "Home"
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UIViewController
+
+      let bundle = R.hostingBundle
+      let name = "LaunchScreen"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

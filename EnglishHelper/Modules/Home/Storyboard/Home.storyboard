@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KcQ-he-8SH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="Bzw-e9-JDp">
+            <objects>
+                <viewController id="KcQ-he-8SH" customClass="HomeViewController" customModule="EnglishHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JpY-z6-Ho7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p7k-W4-mdc">
+                                <rect key="frame" x="5" y="44" width="404" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="16T-9F-lAg">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KcQ-he-8SH" id="6RX-CX-EDO"/>
+                                    <outlet property="delegate" destination="KcQ-he-8SH" id="xed-u4-wtC"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p7k-W4-mdc" firstAttribute="leading" secondItem="XSn-ck-TvG" secondAttribute="leading" constant="5" id="PLD-OP-5v8"/>
+                            <constraint firstItem="XSn-ck-TvG" firstAttribute="trailing" secondItem="p7k-W4-mdc" secondAttribute="trailing" constant="5" id="eCt-nM-wqi"/>
+                            <constraint firstItem="XSn-ck-TvG" firstAttribute="bottom" secondItem="p7k-W4-mdc" secondAttribute="bottom" id="ftA-Jg-0b6"/>
+                            <constraint firstItem="p7k-W4-mdc" firstAttribute="top" secondItem="XSn-ck-TvG" secondAttribute="top" id="kSw-0C-QQ5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XSn-ck-TvG"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="p7k-W4-mdc" id="0Q8-N1-9fm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2r-wr-ibW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-277" y="-43"/>
+        </scene>
+    </scenes>
+</document>
