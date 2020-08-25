@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		042C923B24F525F0007F69B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042C923924F525F0007F69B8 /* Main.storyboard */; };
 		042C923D24F525F2007F69B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042C923C24F525F2007F69B8 /* Assets.xcassets */; };
 		042C924024F525F2007F69B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042C923E24F525F2007F69B8 /* LaunchScreen.storyboard */; };
+		04BFE20324F52AED00F418CE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFE20224F52AED00F418CE /* R.generated.swift */; };
 		9C6169D90181D2D9091FC5B7 /* Pods_EnglishHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C74B8CD9243D6CBEC5FEFE9 /* Pods_EnglishHelper.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		042C923F24F525F2007F69B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042C924124F525F2007F69B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0457D6CA594DF995204634C2 /* Pods-EnglishHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishHelper.debug.xcconfig"; path = "Target Support Files/Pods-EnglishHelper/Pods-EnglishHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		04BFE20224F52AED00F418CE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		6C74B8CD9243D6CBEC5FEFE9 /* Pods_EnglishHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E45BCD3D9FDB1DFFDF162 /* Pods-EnglishHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishHelper.release.xcconfig"; path = "Target Support Files/Pods-EnglishHelper/Pods-EnglishHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,8 +72,17 @@
 				042C923C24F525F2007F69B8 /* Assets.xcassets */,
 				042C923E24F525F2007F69B8 /* LaunchScreen.storyboard */,
 				042C924124F525F2007F69B8 /* Info.plist */,
+				04BFE1FF24F52A5A00F418CE /* Resources */,
 			);
 			path = EnglishHelper;
+			sourceTree = "<group>";
+		};
+		04BFE1FF24F52A5A00F418CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04BFE20224F52AED00F418CE /* R.generated.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		76B605A8F2297F0F3B7CF399 /* Pods */ = {
@@ -80,7 +91,6 @@
 				0457D6CA594DF995204634C2 /* Pods-EnglishHelper.debug.xcconfig */,
 				DC9E45BCD3D9FDB1DFFDF162 /* Pods-EnglishHelper.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +110,7 @@
 			buildConfigurationList = 042C924424F525F2007F69B8 /* Build configuration list for PBXNativeTarget "EnglishHelper" */;
 			buildPhases = (
 				67CA99F70C81A82DCC5A5C9E /* [CP] Check Pods Manifest.lock */,
+				04BFE20124F52AAC00F418CE /* R.swift */,
 				042C922C24F525F0007F69B8 /* Sources */,
 				042C922D24F525F0007F69B8 /* Frameworks */,
 				042C922E24F525F0007F69B8 /* Resources */,
@@ -161,6 +172,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04BFE20124F52AAC00F418CE /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/$PROJECT_NAME/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Resources/R.generated.swift\"\n";
+		};
 		67CA99F70C81A82DCC5A5C9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +241,7 @@
 				042C923824F525F0007F69B8 /* ViewController.swift in Sources */,
 				042C923424F525F0007F69B8 /* AppDelegate.swift in Sources */,
 				042C923624F525F0007F69B8 /* SceneDelegate.swift in Sources */,
+				04BFE20324F52AED00F418CE /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
